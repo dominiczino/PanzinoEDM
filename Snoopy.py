@@ -1,6 +1,8 @@
 #   Snoopy.py
 #   Dominic Panzino
 #   Heartbeat Monitor and Thingsboard Client
+#   Messages sent to this script on TCP port 5555 should be JSON strings of any data that should be logged. All logged data is sent to Thingsboard
+#   Messages that are intended to represent heartbeats should have a key starting with "HEARTBEAT_" and the value should be unix time in milliseconds.
 
 import time
 import requests
@@ -14,7 +16,7 @@ with open("Snoopy.json","r") as configFile:
 
 context = zmq.Context()
 socket=context.socket(zmq.REP)
-socket.bind("tcp://*:{}".format(CONFIGURATION["INTERNAL_PORT"]))
+socket.bind("tcp://*:5555")
 
 status={"HEARTBEAT_Thingsboard":0}
 
@@ -38,7 +40,7 @@ def DisplayStatus():
     for key in status:
         if "HEARTBEAT_" in key:
             print(key[10:],end=" -")
-            for i in range(25-len(key)):
+            for i in range(35-len(key)):
                 print("-",end="")
             print("> ",end="")
             if time.time()-status[key] > CONFIGURATION["DEAD_TIMEOUT"]:

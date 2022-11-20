@@ -1,0 +1,36 @@
+{
+  "X_ENABLE": false,
+  "X_SERIAL": 0,
+  "X_ACCEL": 250000,
+  "X_RAPID": 4000,
+  "X_FEED": 5,
+  "X_ACTIVE_CURRENT": 1.5,
+  "X_IDLE_CURRENT": 0.75,
+  "X_RANGE": 1000,
+
+
+
+  "Y_ENABLE": true,
+  "Y_SERIAL": 616145,
+  "Y_ACCEL": 250000,
+  "Y_RAPID": 4000,
+  "Y_FEED": 5,
+  "Y_ACTIVE_CURRENT": 3,
+  "Y_IDLE_CURRENT": 1.5,
+  "Y_RANGE": 1000,
+
+
+
+
+  "Z_ENABLE": true,
+  "Z_SERIAL": 615433,
+  "Z_RESCALE": 0.0000078,
+  "Z_ACCEL": 250000,
+  "Z_RAPID": 7500,
+  "Z_FEED": 27,
+  "Z_ACTIVE_CURRENT": 1,
+  "Z_IDLE_CURRENT": 0.75,
+  "Z_HOMING_CURRENT": 0.5,
+  "Z_RANGE": 250000
+
+}
