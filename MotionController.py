@@ -19,10 +19,14 @@ with open("MotionControllerParam.json") as boi:
 
     #Initialize all the sockets we'll need for the communication happening here
 context = zmq.Context()
-#recvSocket=context.socket(zmq.REP)
-#recvSocket.bind("tcp://*:5556")
+recvSocket=context.socket(zmq.REP)
+recvSocket.bind("tcp://*:5556")
 snoopySocket=context.socket(zmq.REQ)
 snoopySocket.connect("tcp://localhost:5555")
+serialSocket=context.socket(zmq.REQ)
+serialSocket.connect("tcp://localhost:5557")
+
+
 
 X_Phidget=Stepper()
 Y_Phidget=Stepper()
@@ -60,8 +64,6 @@ def homeZ():
         heartbeat()
         time.sleep(0.05)
         
-
-
 
 
 
